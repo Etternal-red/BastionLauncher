@@ -11,12 +11,12 @@
             "id": "main_server",
             "name": "Etternal - Survival+",
             "description": "El servidor oficial de Etternal.red - Survival con modificaciones.",
-            "icon": "",
+            "icon": "https://www.etternal.red/gamefiles/servericon.png",
             "version": "0.5",
-            "address": "mc.etternal.red:25565",
+            "address": "mc.etternal.red",
             "minecraftVersion": "1.15.2",
             "mainServer": true,
-            "autoconnect": true,
+            "autoconnect": false,
             "modules": [
               {
                 "id": "net.minecraftforge:forge:1.15.2-31.2.0",

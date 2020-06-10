@@ -98,10 +98,10 @@ function showMainUI(data){
         }, 250)
         
     }, 750)
-    // Disable tabbing to the news container.
-    initNews().then(() => {
-        $('#newsContainer *').attr('tabindex', '-1')
-    })
+   // // Disable tabbing to the news container.
+   // initNews().then(() => {
+   //     $('#newsContainer *').attr('tabindex', '-1')
+   // })
 }
 
 function showFatalStartupError(){
@@ -130,7 +130,7 @@ function showFatalStartupError(){
 function onDistroRefresh(data){
     updateSelectedServer(data.getServer(ConfigManager.getSelectedServer()))
     refreshServerStatus()
-    initNews()
+    // initNews()
     syncModConfigurations(data)
 }
 

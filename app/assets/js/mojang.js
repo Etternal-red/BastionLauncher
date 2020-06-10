@@ -20,7 +20,7 @@ const statuses = [
         service: 'mc.etternal.red',
         status: 'grey',
         name: 'Servidor',
-        essential: false
+        essential: true
     },
     {
         service: 'cuenta.etternal.red/api/yggdrasil/sessionserver',

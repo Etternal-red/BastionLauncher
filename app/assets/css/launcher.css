@@ -2305,7 +2305,7 @@ input:checked + .toggleSwitchSlider:before {
 }
 #landingContainer > #lower > #left #content {
     position: relative;
-    top: 25px;
+    top: 15px;
     display: inline-flex;
     line-height: 24px;
     left: 50px;
@@ -2318,12 +2318,14 @@ input:checked + .toggleSwitchSlider:before {
     width: 34%;
     display: inline-flex;
     justify-content: center;
+    text-align: center;
 }
-#landingContainer > #lower > #center #content {
+#landingContainer > #lower > #right #content {
     position: relative;
-    z-index: 500;
-    transition: top 2s ease;
-    top: 10px;
+    top: 15px;
+    display: inline-flex;
+    line-height: 24px;
+    left: 50px;
 }
 #landingContainer > #lower > #right {
     position: relative;
@@ -3210,15 +3212,24 @@ input:checked + .toggleSwitchSlider:before {
     cursor: pointer;
     font-weight: 900;
     letter-spacing: 2px;
-    text-shadow: 0px 0px 0px #bebcbb;
+    text-shadow: 0px 0px 0px #D38312;
     font-size: 20px;
     padding: 0px;
     transition: 0.25s ease;
     outline: none;
+    border: 3px solid rgba(192,252,253,.7);
+    padding: 10px 30px;
+    border-image: linear-gradient(to bottom,#D38312 0,#A83279 100%);
+    border-image-slice: 100%;
+    border-image-slice: 1;
+    background: #111;
 }
 #launch_button:hover,
 #launch_button:focus {
-    text-shadow: 0px 0px 20px #fff, 0px 0px 20px #fff;
+    box-shadow: 0px 0px 10px #e3dac94a, 0px 0px 20px #e3dac94a;
+    background-image: url("./../images/launcher_button.png");
+    background-position: center center;
+    background-size: cover;
 }
 #launch_button:active {
     color: #c7c7c7;
@@ -3233,7 +3244,6 @@ input:checked + .toggleSwitchSlider:before {
 /* Launch details main container, hidden until launch processing begins. */
 #launch_details {
     position: relative;
-    top: 25px;
     display: none;
 }
  
@@ -3250,7 +3260,7 @@ input:checked + .toggleSwitchSlider:before {
     font-size: 20px;
     min-width: 53.21px;
     max-width: 53.21px;
-    text-align: right;
+    margin: auto;
 }
 
 /* Right side of launch details container, displays progress bar and details. */
@@ -3295,9 +3305,7 @@ input:checked + .toggleSwitchSlider:before {
 /* Span which displays information about the status of the launch process. */
 #launch_details_text {
     font-size: 11px;
-    text-overflow: ellipsis;
     white-space: nowrap;
-    overflow: hidden;
 }
 
 /*******************************************************************************

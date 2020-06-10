@@ -32,11 +32,11 @@ const loggerLanding = LoggerUtil('%c[Landing]', 'color: #000668; font-weight: bo
  */
 function toggleLaunchArea(loading){
     if(loading){
-        launch_details.style.display = 'flex'
+        launch_details.style.display = 'block'
         launch_content.style.display = 'none'
     } else {
         launch_details.style.display = 'none'
-        launch_content.style.display = 'inline-flex'
+        launch_content.style.display = 'block'
     }
 }
 
@@ -144,14 +144,14 @@ function updateSelectedServer(serv){
     }
     ConfigManager.setSelectedServer(serv != null ? serv.getID() : null)
     ConfigManager.save()
-    server_selection_button.innerHTML = '\u2022 ' + (serv != null ? serv.getName() : 'No Server Selected')
+    server_selection_button.innerHTML = (serv != null ? serv.getName() : 'No Server Selected')
     if(getCurrentView() === VIEWS.settings){
         animateModsTabRefresh()
     }
     setLaunchEnabled(serv != null)
 }
 // Real text is set in uibinder.js on distributionIndexDone.
-server_selection_button.innerHTML = '\u2022 Loading..'
+server_selection_button.innerHTML = 'Cargando..'
 server_selection_button.onclick = (e) => {
     e.target.blur()
     toggleServerSelection(true)
@@ -227,7 +227,7 @@ const refreshServerStatus = async function(fade = false){
         const serverURL = new URL('my://' + serv.getAddress())
         const servStat = await ServerStatus.getStatus(serverURL.hostname, serverURL.port)
         if(servStat.online){
-            pLabel = 'PLAYERS'
+            pLabel = 'Jugadores'
             pVal = servStat.onlinePlayers + '/' + servStat.maxPlayers
         }
 
@@ -287,7 +287,7 @@ let extractListener
  */
 function asyncSystemScan(mcVersion, launchAfter = true){
 
-    setLaunchDetails('Please wait..')
+    setLaunchDetails('Por favor espera..')
     toggleLaunchArea(true)
     setLaunchPercentage(0, 100)
 
@@ -375,7 +375,7 @@ function asyncSystemScan(mcVersion, launchAfter = true){
             if(m.result === true){
 
                 // Oracle JRE enqueued successfully, begin download.
-                setLaunchDetails('Downloading Java..')
+                setLaunchDetails('Descargando Java..')
                 sysAEx.send({task: 'execute', function: 'processDlQueues', argsArr: [[{id:'java', limit:1}]]})
 
             } else {
@@ -439,7 +439,7 @@ function asyncSystemScan(mcVersion, launchAfter = true){
                         extractListener = null
                     }
 
-                    setLaunchDetails('Java Installed!')
+                    setLaunchDetails('¡Java instalado!')
 
                     if(launchAfter){
                         dlAsync()
@@ -721,7 +721,7 @@ function dlAsync(login = true){
     // Begin Validations
 
     // Validate Forge files.
-    setLaunchDetails('Loading server information..')
+    setLaunchDetails('Cargando información del servidor..')
 
     refreshDistributionIndex(true, (data) => {
         onDistroRefresh(data)
@@ -771,69 +771,69 @@ let newsGlideCount = 0
  * 
  * @param {boolean} up True to slide up, otherwise false. 
  */
-function slide_(up){
-    const lCUpper = document.querySelector('#landingContainer > #upper')
-    const lCLLeft = document.querySelector('#landingContainer > #lower > #left')
-    const lCLCenter = document.querySelector('#landingContainer > #lower > #center')
-    const lCLRight = document.querySelector('#landingContainer > #lower > #right')
-    const newsBtn = document.querySelector('#landingContainer > #lower > #center #content')
-    const landingContainer = document.getElementById('landingContainer')
-    const newsContainer = document.querySelector('#landingContainer > #newsContainer')
-
-    newsGlideCount++
-
-    if(up){
-        lCUpper.style.top = '-200vh'
-        lCLLeft.style.top = '-200vh'
-        lCLCenter.style.top = '-200vh'
-        lCLRight.style.top = '-200vh'
-        newsBtn.style.top = '130vh'
-        newsContainer.style.top = '0px'
-        //date.toLocaleDateString('en-US', {month: 'short', day: 'numeric', year: 'numeric', hour: 'numeric', minute: 'numeric'})
-        //landingContainer.style.background = 'rgba(29, 29, 29, 0.55)'
-        landingContainer.style.background = 'rgba(0, 0, 0, 0.50)'
-        setTimeout(() => {
-            if(newsGlideCount === 1){
-                lCLCenter.style.transition = 'none'
-                newsBtn.style.transition = 'none'
-            }
-            newsGlideCount--
-        }, 2000)
-    } else {
-        setTimeout(() => {
-            newsGlideCount--
-        }, 2000)
-        landingContainer.style.background = null
-        lCLCenter.style.transition = null
-        newsBtn.style.transition = null
-        newsContainer.style.top = '100%'
-        lCUpper.style.top = '0px'
-        lCLLeft.style.top = '0px'
-        lCLCenter.style.top = '0px'
-        lCLRight.style.top = '0px'
-        newsBtn.style.top = '10px'
-    }
-}
-
-// Bind news button.
-document.getElementById('newsButton').onclick = () => {
-    // Toggle tabbing.
-    if(newsActive){
-        $('#landingContainer *').removeAttr('tabindex')
-        $('#newsContainer *').attr('tabindex', '-1')
-    } else {
-        $('#landingContainer *').attr('tabindex', '-1')
-        $('#newsContainer, #newsContainer *, #lower, #lower #center *').removeAttr('tabindex')
-        if(newsAlertShown){
-            $('#newsButtonAlert').fadeOut(2000)
-            newsAlertShown = false
-            ConfigManager.setNewsCacheDismissed(true)
-            ConfigManager.save()
-        }
-    }
-    slide_(!newsActive)
-    newsActive = !newsActive
-}
+//function slide_(up){
+//    const lCUpper = document.querySelector('#landingContainer > #upper')
+//    const lCLLeft = document.querySelector('#landingContainer > #lower > #left')
+//    const lCLCenter = document.querySelector('#landingContainer > #lower > #center')
+//    const lCLRight = document.querySelector('#landingContainer > #lower > #right')
+//    const newsBtn = document.querySelector('#landingContainer > #lower > #center #content')
+//    const landingContainer = document.getElementById('landingContainer')
+//    const newsContainer = document.querySelector('#landingContainer > #newsContainer')
+//
+//    newsGlideCount++
+//
+//    if(up){
+//        lCUpper.style.top = '-200vh'
+//        lCLLeft.style.top = '-200vh'
+//        lCLCenter.style.top = '-200vh'
+//        lCLRight.style.top = '-200vh'
+//        newsBtn.style.top = '130vh'
+//        newsContainer.style.top = '0px'
+//        //date.toLocaleDateString('en-US', {month: 'short', day: 'numeric', year: 'numeric', hour: 'numeric', minute: 'numeric'})
+//        //landingContainer.style.background = 'rgba(29, 29, 29, 0.55)'
+//        landingContainer.style.background = 'rgba(0, 0, 0, 0.50)'
+//        setTimeout(() => {
+//            if(newsGlideCount === 1){
+//                lCLCenter.style.transition = 'none'
+//                newsBtn.style.transition = 'none'
+//            }
+//            newsGlideCount--
+//        }, 2000)
+//    } else {
+//        setTimeout(() => {
+//            newsGlideCount--
+//        }, 2000)
+//        landingContainer.style.background = null
+//        lCLCenter.style.transition = null
+//        newsBtn.style.transition = null
+//        newsContainer.style.top = '100%'
+//        lCUpper.style.top = '0px'
+//        lCLLeft.style.top = '0px'
+//        lCLCenter.style.top = '0px'
+//        lCLRight.style.top = '0px'
+//        newsBtn.style.top = '10px'
+//    }
+//}
+//
+//// Bind news button.
+//document.getElementById('newsButton').onclick = () => {
+//    // Toggle tabbing.
+//    if(newsActive){
+//        $('#landingContainer *').removeAttr('tabindex')
+//        $('#newsContainer *').attr('tabindex', '-1')
+//    } else {
+//        $('#landingContainer *').attr('tabindex', '-1')
+//        $('#newsContainer, #newsContainer *, #lower, #lower #center *').removeAttr('tabindex')
+//        if(newsAlertShown){
+//            $('#newsButtonAlert').fadeOut(2000)
+//            newsAlertShown = false
+//            ConfigManager.setNewsCacheDismissed(true)
+//            ConfigManager.save()
+//        }
+//    }
+//    slide_(!newsActive)
+//    newsActive = !newsActive
+//}
 
 // Array to store article meta.
 let newsArr = null
@@ -846,42 +846,42 @@ let newsLoadingListener = null
  * 
  * @param {boolean} val True to set loading animation, otherwise false.
  */
-function setNewsLoading(val){
-    if(val){
-        const nLStr = 'Checking for News'
-        let dotStr = '..'
-        nELoadSpan.innerHTML = nLStr + dotStr
-        newsLoadingListener = setInterval(() => {
-            if(dotStr.length >= 3){
-                dotStr = ''
-            } else {
-                dotStr += '.'
-            }
-            nELoadSpan.innerHTML = nLStr + dotStr
-        }, 750)
-    } else {
-        if(newsLoadingListener != null){
-            clearInterval(newsLoadingListener)
-            newsLoadingListener = null
-        }
-    }
-}
-
-// Bind retry button.
-newsErrorRetry.onclick = () => {
-    $('#newsErrorFailed').fadeOut(250, () => {
-        initNews()
-        $('#newsErrorLoading').fadeIn(250)
-    })
-}
-
-newsArticleContentScrollable.onscroll = (e) => {
-    if(e.target.scrollTop > Number.parseFloat($('.newsArticleSpacerTop').css('height'))){
-        newsContent.setAttribute('scrolled', '')
-    } else {
-        newsContent.removeAttribute('scrolled')
-    }
-}
+//function setNewsLoading(val){
+//    if(val){
+//        const nLStr = 'Checking for News'
+//        let dotStr = '..'
+//        nELoadSpan.innerHTML = nLStr + dotStr
+//        newsLoadingListener = setInterval(() => {
+//            if(dotStr.length >= 3){
+//                dotStr = ''
+//            } else {
+//                dotStr += '.'
+//            }
+//            nELoadSpan.innerHTML = nLStr + dotStr
+//        }, 750)
+//    } else {
+//        if(newsLoadingListener != null){
+//            clearInterval(newsLoadingListener)
+//            newsLoadingListener = null
+//        }
+//    }
+//}
+//
+//// Bind retry button.
+//newsErrorRetry.onclick = () => {
+//    $('#newsErrorFailed').fadeOut(250, () => {
+//        initNews()
+//        $('#newsErrorLoading').fadeIn(250)
+//    })
+//}
+//
+//newsArticleContentScrollable.onscroll = (e) => {
+//    if(e.target.scrollTop > Number.parseFloat($('.newsArticleSpacerTop').css('height'))){
+//        newsContent.setAttribute('scrolled', '')
+//    } else {
+//        newsContent.removeAttribute('scrolled')
+//    }
+//}
 
 /**
  * Reload the news without restarting.
@@ -889,135 +889,135 @@ newsArticleContentScrollable.onscroll = (e) => {
  * @returns {Promise.<void>} A promise which resolves when the news
  * content has finished loading and transitioning.
  */
-function reloadNews(){
-    return new Promise((resolve, reject) => {
-        $('#newsContent').fadeOut(250, () => {
-            $('#newsErrorLoading').fadeIn(250)
-            initNews().then(() => {
-                resolve()
-            })
-        })
-    })
-}
-
-let newsAlertShown = false
-
-/**
- * Show the news alert indicating there is new news.
- */
-function showNewsAlert(){
-    newsAlertShown = true
-    $(newsButtonAlert).fadeIn(250)
-}
-
-/**
- * Initialize News UI. This will load the news and prepare
- * the UI accordingly.
- * 
- * @returns {Promise.<void>} A promise which resolves when the news
- * content has finished loading and transitioning.
- */
-function initNews(){
-
-    return new Promise((resolve, reject) => {
-        setNewsLoading(true)
-
-        let news = {}
-        loadNews().then(news => {
-
-            newsArr = news.articles || null
-
-            if(newsArr == null){
-                // News Loading Failed
-                setNewsLoading(false)
-
-                $('#newsErrorLoading').fadeOut(250, () => {
-                    $('#newsErrorFailed').fadeIn(250, () => {
-                        resolve()
-                    })
-                })
-            } else if(newsArr.length === 0) {
-                // No News Articles
-                setNewsLoading(false)
-
-                ConfigManager.setNewsCache({
-                    date: null,
-                    content: null,
-                    dismissed: false
-                })
-                ConfigManager.save()
-
-                $('#newsErrorLoading').fadeOut(250, () => {
-                    $('#newsErrorNone').fadeIn(250, () => {
-                        resolve()
-                    })
-                })
-            } else {
-                // Success
-                setNewsLoading(false)
-
-                const lN = newsArr[0]
-                const cached = ConfigManager.getNewsCache()
-                let newHash = crypto.createHash('sha1').update(lN.content).digest('hex')
-                let newDate = new Date(lN.date)
-                let isNew = false
-
-                if(cached.date != null && cached.content != null){
-
-                    if(new Date(cached.date) >= newDate){
-
-                        // Compare Content
-                        if(cached.content !== newHash){
-                            isNew = true
-                            showNewsAlert()
-                        } else {
-                            if(!cached.dismissed){
-                                isNew = true
-                                showNewsAlert()
-                            }
-                        }
-
-                    } else {
-                        isNew = true
-                        showNewsAlert()
-                    }
-
-                } else {
-                    isNew = true
-                    showNewsAlert()
-                }
-
-                if(isNew){
-                    ConfigManager.setNewsCache({
-                        date: newDate.getTime(),
-                        content: newHash,
-                        dismissed: false
-                    })
-                    ConfigManager.save()
-                }
-
-                const switchHandler = (forward) => {
-                    let cArt = parseInt(newsContent.getAttribute('article'))
-                    let nxtArt = forward ? (cArt >= newsArr.length-1 ? 0 : cArt + 1) : (cArt <= 0 ? newsArr.length-1 : cArt - 1)
-            
-                    displayArticle(newsArr[nxtArt], nxtArt+1)
-                }
-
-                document.getElementById('newsNavigateRight').onclick = () => { switchHandler(true) }
-                document.getElementById('newsNavigateLeft').onclick = () => { switchHandler(false) }
-
-                $('#newsErrorContainer').fadeOut(250, () => {
-                    displayArticle(newsArr[0], 1)
-                    $('#newsContent').fadeIn(250, () => {
-                        resolve()
-                    })
-                })
-            }
-
-        })
-        
-    })
-}
+//function reloadNews(){
+//    return new Promise((resolve, reject) => {
+//        $('#newsContent').fadeOut(250, () => {
+//            $('#newsErrorLoading').fadeIn(250)
+//            initNews().then(() => {
+//                resolve()
+//            })
+//        })
+//    })
+//}
+//
+//let newsAlertShown = false
+//
+///**
+// * Show the news alert indicating there is new news.
+// */
+//function showNewsAlert(){
+//    newsAlertShown = true
+//    $(newsButtonAlert).fadeIn(250)
+//}
+//
+///**
+// * Initialize News UI. This will load the news and prepare
+// * the UI accordingly.
+// * 
+// * @returns {Promise.<void>} A promise which resolves when the news
+// * content has finished loading and transitioning.
+// */
+//function initNews(){
+//
+//    return new Promise((resolve, reject) => {
+//        setNewsLoading(true)
+//
+//        let news = {}
+//        loadNews().then(news => {
+//
+//            newsArr = news.articles || null
+//
+//            if(newsArr == null){
+//                // News Loading Failed
+//                setNewsLoading(false)
+//
+//                $('#newsErrorLoading').fadeOut(250, () => {
+//                    $('#newsErrorFailed').fadeIn(250, () => {
+//                        resolve()
+//                    })
+//                })
+//            } else if(newsArr.length === 0) {
+//                // No News Articles
+//                setNewsLoading(false)
+//
+//                ConfigManager.setNewsCache({
+//                    date: null,
+//                    content: null,
+//                    dismissed: false
+//                })
+//                ConfigManager.save()
+//
+//                $('#newsErrorLoading').fadeOut(250, () => {
+//                    $('#newsErrorNone').fadeIn(250, () => {
+//                        resolve()
+//                    })
+//                })
+//            } else {
+//                // Success
+//                setNewsLoading(false)
+//
+//                const lN = newsArr[0]
+//                const cached = ConfigManager.getNewsCache()
+//                let newHash = crypto.createHash('sha1').update(lN.content).digest('hex')
+//                let newDate = new Date(lN.date)
+//                let isNew = false
+//
+//                if(cached.date != null && cached.content != null){
+//
+//                    if(new Date(cached.date) >= newDate){
+//
+//                        // Compare Content
+//                        if(cached.content !== newHash){
+//                            isNew = true
+//                            showNewsAlert()
+//                        } else {
+//                            if(!cached.dismissed){
+//                                isNew = true
+//                                showNewsAlert()
+//                            }
+//                        }
+//
+//                    } else {
+//                        isNew = true
+//                        showNewsAlert()
+//                    }
+//
+//                } else {
+//                    isNew = true
+//                    showNewsAlert()
+//                }
+//
+//                if(isNew){
+//                    ConfigManager.setNewsCache({
+//                        date: newDate.getTime(),
+//                        content: newHash,
+//                        dismissed: false
+//                    })
+//                    ConfigManager.save()
+//                }
+//
+//                const switchHandler = (forward) => {
+//                    let cArt = parseInt(newsContent.getAttribute('article'))
+//                    let nxtArt = forward ? (cArt >= newsArr.length-1 ? 0 : cArt + 1) : (cArt <= 0 ? newsArr.length-1 : cArt - 1)
+//            
+//                    displayArticle(newsArr[nxtArt], nxtArt+1)
+//                }
+//
+//                document.getElementById('newsNavigateRight').onclick = () => { switchHandler(true) }
+//                document.getElementById('newsNavigateLeft').onclick = () => { switchHandler(false) }
+//
+//                $('#newsErrorContainer').fadeOut(250, () => {
+//                    displayArticle(newsArr[0], 1)
+//                    $('#newsContent').fadeIn(250, () => {
+//                        resolve()
+//                    })
+//                })
+//            }
+//
+//        })
+//        
+//    })
+//}
 
 /**
  * Add keyboard controls to the news UI. Left and right arrows toggle
