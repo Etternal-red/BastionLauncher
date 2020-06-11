@@ -35,42 +35,7 @@
 <body bkid="<%=bkid%>">
     <% include frame.ejs %>
     <div id="main">
-        <div id="sidebar_menu">
-            <div id="user_content">
-                <div id="khiniaestuvoaqui">
-                    <div id="avatarContainer"><!--<button id="avatarOverlay">Editar</button>-->
-                    </div>
-                </div>
-                <span id="user_text">Usuario</span>
-            </div>
-            <div class="menu_item">
-                <div class="menu_container">
-                    <span class="menu_text">Jugar</span>
-                </div>
-            </div>
-            <div class="menu_item">
-                <div class="menu_container">
-                    <span class="menu_text">Mazmorras</span>
-                </div>
-            </div>
-            <div class="menu_item">
-                <a href="#">
-                    <i class="fa fa-book"></i>
-                    <span>Documentation</span>
-                    <span class="badge badge-pill badge-primary">Beta</span>
-                </a>
-            </div>
-            <div class="menu_item">
-                <div class="menu_container">
-                    <span class="menu_text">Tienda</span>
-                </div>
-            </div>
-            <div class="menu_item">
-                <div class="menu_container">
-                    <span class="menu_text">Configuración</span>
-                </div>
-            </div>
-        </div>
+        <% include sidebar.ejs %>
         <% include welcome.ejs %>
         <% include login.ejs %>
         <% include settings.ejs %>
