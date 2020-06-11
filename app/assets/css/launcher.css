@@ -222,7 +222,7 @@ body, button {
     display: flex;
     align-items: center;
     flex-direction: column;
-    justify-content: center;
+    /*justify-content: center;*/
 }
 
 
@@ -323,6 +323,18 @@ body, button {
 
 .menu_text {
     margin: 0 auto;
+    color: #cbcbcb;
+}
+.active_item:hover .menu_text{
+    color: #fffade;
+}
+
+.active_item:hover i{
+    color: #fffade;
+    animation: swing ease-in-out 0.5s 1 alternate;
+}
+.active_item:hover i:before{
+    text-shadow: 0px 0px 10px #fffade;
 }
 
 .menu_container i{
@@ -335,7 +347,59 @@ body, button {
     text-align: center;
     border-radius: 4px;
 }
+.bottom_item{
+    bottom: 20px;
+    position: absolute;
+}
 /*******************************************************************************
+ *                                                                             *
+ * Animation for the menu items [https://codepen.io/azouaoui-med/pen/wpBadb]   *
+ *                                                                             *
+ ******************************************************************************/
+ 
+ @keyframes swing {
+    0% {
+      transform: rotate(0deg);
+    }
+    10% {
+      transform: rotate(10deg);
+    }
+    30% {
+      transform: rotate(0deg);
+    }
+    40% {
+      transform: rotate(-10deg);
+    }
+    50% {
+      transform: rotate(0deg);
+    }
+    60% {
+      transform: rotate(5deg);
+    }
+    70% {
+      transform: rotate(0deg);
+    }
+    80% {
+      transform: rotate(-5deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+  
+  @keyframes sonar {
+    0% {
+      transform: scale(0.9);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(2);
+      opacity: 0;
+    }
+  }
+  
+
+ /*******************************************************************************
  *                                                                             *
  * Welcome View (welcome.ejs)                                                  *
  *                                                                             *
