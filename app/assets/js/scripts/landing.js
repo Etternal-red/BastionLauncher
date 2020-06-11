@@ -115,22 +115,22 @@ document.getElementById('settingsMediaButton').onclick = (e) => {
 }
 
 // Bind avatar overlay button.
-document.getElementById('avatarOverlay').onclick = (e) => {
-    prepareSettings()
-    switchView(getCurrentView(), VIEWS.settings, 500, 500, () => {
-        settingsNavItemListener(document.getElementById('settingsNavAccount'), false)
-    })
-}
+//document.getElementById('avatarOverlay').onclick = (e) => {
+//    prepareSettings()
+//    switchView(getCurrentView(), VIEWS.settings, 500, 500, () => {
+//        settingsNavItemListener(document.getElementById('settingsNavAccount'), false)
+//    })
+//}
 
 // Bind selected account
 function updateSelectedAccount(authUser){
-    let username = 'No Account Selected'
+    let username = 'No iniciaste sesión'
     if(authUser != null){
         if(authUser.displayName != null){
             username = authUser.displayName
         }
         if(authUser.uuid != null){
-            document.getElementById('avatarContainer').style.backgroundImage = `url('https://crafatar.com/renders/body/${authUser.uuid}')`
+            document.getElementById('avatarContainer').style.backgroundImage = `url('https://cuenta.etternal.red/avatar/user/${authUser.displayName}')`
         }
     }
     user_text.innerHTML = username
@@ -144,7 +144,7 @@ function updateSelectedServer(serv){
     }
     ConfigManager.setSelectedServer(serv != null ? serv.getID() : null)
     ConfigManager.save()
-    server_selection_button.innerHTML = (serv != null ? serv.getName() : 'No Server Selected')
+    server_selection_button.innerHTML = (serv != null ? serv.getName() : 'No hay un servidor seleccionado')
     if(getCurrentView() === VIEWS.settings){
         animateModsTabRefresh()
     }
@@ -159,7 +159,7 @@ server_selection_button.onclick = (e) => {
 
 // Update Mojang Status Color
 const refreshMojangStatuses = async function(){
-    loggerLanding.log('Refreshing Mojang Statuses..')
+    loggerLanding.log('Viendo como están los servidores de Etternal..')
 
     let status = 'grey'
     let tooltipEssentialHTML = ''

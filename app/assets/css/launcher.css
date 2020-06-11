@@ -211,6 +211,116 @@ body, button {
 
 /*******************************************************************************
  *                                                                             *
+ * Sidebar Menu [Etternal Add-on]                                              *
+ *                                                                             *
+ ******************************************************************************/
+
+#sidebar_menu{
+    background: #111;
+    width: 150px;
+    flex: 0 0 175px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+/* Right hand user content container. */
+#user_content {
+    /*display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    position: relative;*/
+    border-radius: 10px;
+    background: #1c9c1c;
+    height: 50px;
+    margin: 5px;
+    display: inline-flex;
+    width: 95%;
+    justify-content: center;
+}
+
+#khiniaestuvoaqui{
+    margin: auto 0;
+    /* flex: 0 0 50px;*/
+}
+
+/* User profile avatar container. */
+#avatarContainer {
+    border-radius: 50%;
+    border: 2px solid #cad7e1;
+    box-sizing: border-box;
+    background: rgba(1, 2, 1, 0.5);
+    height: 30px;
+    width: 30px;
+    /*box-shadow: 0px 0px 10px 0px rgb(0, 0, 0);*/
+    overflow: hidden;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    /* margin: auto; */
+}
+
+/* Avatar edit overlay. 
+#avatarOverlay {
+    opacity: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.25s ease;
+    font-weight: bold;
+    letter-spacing: 2px;
+    background-color: rgba(0, 0, 0, 0.35);
+    -webkit-user-select: none;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+#avatarOverlay:hover,
+#avatarOverlay:focus {
+    opacity: 1;
+}
+#avatarOverlay:active {
+    background-color: rgba(0, 0, 0, 0.45);
+}*/
+
+/* User profile name text. */
+#user_text {
+    font-size: 12px;
+    /*min-width: 135px;*/
+    font-weight: 900;
+    letter-spacing: 1px;
+    text-shadow: 0px 0px 20px black;
+    /* position: absolute;
+    right: 95px;
+    text-align: right;*/
+    -webkit-user-select: initial;
+    /* flex: auto;
+    margin: auto;*/
+    margin: auto 0px auto 10px;
+}
+
+.menu_item{
+    width: 100%;
+    height: 50px;
+    align-items: center;
+    display: inline-flex;
+}
+
+.menu_container{
+    margin: auto;
+}
+
+.menu_text {
+    margin: 0 auto;
+}
+/*******************************************************************************
+ *                                                                             *
  * Welcome View (welcome.ejs)                                                  *
  *                                                                             *
  ******************************************************************************/
@@ -885,6 +995,7 @@ body, button {
     display: flex;
     background-color: rgba(0, 0, 0, 0.50);
     transition: background-color 0.25s cubic-bezier(.02, .01, .47, 1);
+    flex: auto;
 }
 
 /* Drop shadow displayed when content is scrolled out of view. */
@@ -2261,6 +2372,8 @@ input:checked + .toggleSwitchSlider:before {
     position: relative;
     transition: background 2s ease;
     overflow-y: hidden;
+    width: 100%;
+    flex: auto;
 }
 
 /* Upper content container. */
@@ -2769,71 +2882,6 @@ input:checked + .toggleSwitchSlider:before {
     top: 50px;
     align-items: flex-start;
     height: calc(100% - 50px);
-}
-
-/* Right hand user content container. */
-#user_content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
-    position: relative;
-}
-
-/* User profile avatar container. */
-#avatarContainer {
-    border-radius: 50%;
-    border: 2px solid #cad7e1;
-    box-sizing: border-box;
-    background: rgba(1, 2, 1, 0.5);
-    height: 70px;
-    width: 70px;
-    box-shadow: 0px 0px 10px 0px rgb(0, 0, 0);
-    overflow: hidden;
-    position: relative;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-}
-
-/* Avatar edit overlay. */
-#avatarOverlay {
-    opacity: 0;
-    position: absolute;
-    z-index: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: 0.25s ease;
-    font-weight: bold;
-    letter-spacing: 2px;
-    background-color: rgba(0, 0, 0, 0.35);
-    -webkit-user-select: none;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-}
-#avatarOverlay:hover,
-#avatarOverlay:focus {
-    opacity: 1;
-}
-#avatarOverlay:active {
-    background-color: rgba(0, 0, 0, 0.45);
-}
-
-/* User profile name text. */
-#user_text {
-    font-size: 12px;
-    min-width: 135px;
-    font-weight: 900;
-    letter-spacing: 1px;
-    text-shadow: 0px 0px 20px black;
-    position: absolute;
-    right: 95px;
-    text-align: right;
-    -webkit-user-select: initial;
 }
 
 /* Social media icon content container. */
