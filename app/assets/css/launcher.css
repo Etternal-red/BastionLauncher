@@ -233,9 +233,9 @@ body, button {
     justify-content: center;
     box-sizing: border-box;
     position: relative;*/
-    border-radius: 10px;
+    border-radius: 5px;
     background: #1c9c1c;
-    height: 50px;
+    height: 40px;
     margin: 5px;
     display: inline-flex;
     width: 95%;
@@ -312,12 +312,28 @@ body, button {
     display: inline-flex;
 }
 
+.menu_hoveable:hover{
+    background-color: #333;
+    transition: background 0.2s; /* For modern browsers */
+}
+
 .menu_container{
-    margin: auto;
+    margin-left: 10px;
 }
 
 .menu_text {
     margin: 0 auto;
+}
+
+.menu_container i{
+    background: #3a3f48;
+    margin-right: 10px;
+    font-size: 12px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 4px;
 }
 /*******************************************************************************
  *                                                                             *
@@ -1096,7 +1112,7 @@ body, button {
     margin-bottom: 25px;
 }
 
-/* Settings done button styles. */
+/* Settings done button styles.
 #settingsNavDone {
     background: none;
     border: none;
@@ -1120,7 +1136,7 @@ body, button {
     color: rgba(255, 255, 255, 0.75);
     pointer-events: none;
 }
-
+*/
 /* Right hand side of the settings container, for tabs. */
 #settingsContainerRight {
     height: 100%;
