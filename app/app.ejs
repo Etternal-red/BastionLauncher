@@ -1,16 +1,15 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="utf-8" http-equiv="Content-Security-Policy" content="script-src 'self' 'sha256-In6B8teKZQll5heMl9bS7CESTbGvuAt3VVV86BUQBDk='"/>
+    <meta charset="utf-8" http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline'"/>
     <title>Launcher de Etternal</title>
+    <script src="./assets/js/jquery-3.5.1.min.js" onload="window.$ = window.jQuery = module.exports;"></script> 
+    <script src="./assets/js/popper.min.js"></script>
+    <script src="./assets/js/bootstrap.min.js"></script>
     <script src="./assets/js/scripts/uicore.js"></script>
     <script src="./assets/js/scripts/uibinder.js"></script>
-    <script src="./assets/js/jquery-3.5.1.min.js"></script>
-    <script src="./assets/js/bootstrap.min.js"></script>
-    <script src="./assets/js/popper.min.js"></script>
     <link type="text/css" rel="stylesheet" href="./assets/css/all.min.css">
     <link type="text/css" rel="stylesheet" href="./assets/css/bootstrap.min.css">
     <link type="text/css" rel="stylesheet" href="./assets/css/launcher.css">
-    
     <style>
         body {
             /*background: url('assets/images/backgrounds/<%=bkid%>.jpg') no-repeat center center fixed;*/
@@ -30,14 +29,24 @@
         #main[overlay] {
             filter: blur(3px) contrast(0.9) brightness(1.0);
         }
+        #secondmain{
+            display: block;
+            height: calc(100% - 22px);
+            background: #111;
+            width: 100%;
+            position: absolute;
+            z-index: 20;
+        }
     </style>
 </head>
 <body bkid="<%=bkid%>">
     <% include frame.ejs %>
-    <div id="main">
-        <% include sidebar.ejs %>
+    <div id="secondmain" style="display:none;">
         <% include welcome.ejs %>
         <% include login.ejs %>
+    </div>
+    <div id="main">
+        <% include sidebar.ejs %>
         <% include settings.ejs %>
         <% include landing.ejs %>
     </div>

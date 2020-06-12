@@ -161,63 +161,63 @@ server_selection_button.onclick = (e) => {
 }
 
 // Update Mojang Status Color
-const refreshMojangStatuses = async function(){
-    loggerLanding.log('Viendo como están los servidores de Etternal..')
-
-    let status = 'grey'
-    let tooltipEssentialHTML = ''
-    let tooltipNonEssentialHTML = ''
-
-    try {
-        const statuses = await Mojang.status()
-        greenCount = 0
-        greyCount = 0
-
-        for(let i=0; i<statuses.length; i++){
-            const service = statuses[i]
-
-            if(service.essential){
-                tooltipEssentialHTML += `<div class="mojangStatusContainer">
-                    <span class="mojangStatusIcon" style="color: ${Mojang.statusToHex(service.status)};">&#8226;</span>
-                    <span class="mojangStatusName">${service.name}</span>
-                </div>`
-            } else {
-                tooltipNonEssentialHTML += `<div class="mojangStatusContainer">
-                    <span class="mojangStatusIcon" style="color: ${Mojang.statusToHex(service.status)};">&#8226;</span>
-                    <span class="mojangStatusName">${service.name}</span>
-                </div>`
-            }
-
-            if(service.status === 'yellow' && status !== 'red'){
-                status = 'yellow'
-            } else if(service.status === 'red'){
-                status = 'red'
-            } else {
-                if(service.status === 'grey'){
-                    ++greyCount
-                }
-                ++greenCount
-            }
-
-        }
-
-        if(greenCount === statuses.length){
-            if(greyCount === statuses.length){
-                status = 'grey'
-            } else {
-                status = 'green'
-            }
-        }
-
-    } catch (err) {
-        loggerLanding.warn('Unable to refresh Mojang service status.')
-        loggerLanding.debug(err)
-    }
-    
-    document.getElementById('mojangStatusEssentialContainer').innerHTML = tooltipEssentialHTML
-    document.getElementById('mojangStatusNonEssentialContainer').innerHTML = tooltipNonEssentialHTML
-    document.getElementById('mojang_status_icon').style.color = Mojang.statusToHex(status)
-}
+//const refreshMojangStatuses = async function(){
+//    loggerLanding.log('Viendo como están los servidores de Etternal..')
+//
+//    let status = 'grey'
+//    let tooltipEssentialHTML = ''
+//    let tooltipNonEssentialHTML = ''
+//
+//    try {
+//        const statuses = await Mojang.status()
+//        greenCount = 0
+//        greyCount = 0
+//
+//        for(let i=0; i<statuses.length; i++){
+//            const service = statuses[i]
+//
+//            if(service.essential){
+//                tooltipEssentialHTML += `<div class="mojangStatusContainer">
+//                    <span class="mojangStatusIcon" style="color: ${Mojang.statusToHex(service.status)};">&#8226;</span>
+//                    <span class="mojangStatusName">${service.name}</span>
+//                </div>`
+//            } else {
+//                tooltipNonEssentialHTML += `<div class="mojangStatusContainer">
+//                    <span class="mojangStatusIcon" style="color: ${Mojang.statusToHex(service.status)};">&#8226;</span>
+//                    <span class="mojangStatusName">${service.name}</span>
+//                </div>`
+//            }
+//
+//            if(service.status === 'yellow' && status !== 'red'){
+//                status = 'yellow'
+//            } else if(service.status === 'red'){
+//                status = 'red'
+//            } else {
+//                if(service.status === 'grey'){
+//                    ++greyCount
+//                }
+//                ++greenCount
+//            }
+//
+//        }
+//
+//        if(greenCount === statuses.length){
+//            if(greyCount === statuses.length){
+//                status = 'grey'
+//            } else {
+//                status = 'green'
+//            }
+//        }
+//
+//    } catch (err) {
+//        loggerLanding.warn('Unable to refresh Mojang service status.')
+//        loggerLanding.debug(err)
+//    }
+//    
+//    document.getElementById('mojangStatusEssentialContainer').innerHTML = tooltipEssentialHTML
+//    document.getElementById('mojangStatusNonEssentialContainer').innerHTML = tooltipNonEssentialHTML
+//    document.getElementById('mojang_status_icon').style.color = Mojang.statusToHex(status)
+//}
 
 const refreshServerStatus = async function(fade = false){
     loggerLanding.log('Refreshing Server Status')
@@ -251,7 +251,7 @@ const refreshServerStatus = async function(fade = false){
     
 }
 
-refreshMojangStatuses()
+// refreshMojangStatuses()
 // Server Status is refreshed in uibinder.js on distributionIndexDone.
 
 // Set refresh rate to once every 5 minutes.
@@ -1027,109 +1027,109 @@ let newsLoadingListener = null
  * between articles. If you are on the landing page, the up arrow will
  * open the news UI.
  */
-document.addEventListener('keydown', (e) => {
-    if(newsActive){
-        if(e.key === 'ArrowRight' || e.key === 'ArrowLeft'){
-            document.getElementById(e.key === 'ArrowRight' ? 'newsNavigateRight' : 'newsNavigateLeft').click()
-        }
-        // Interferes with scrolling an article using the down arrow.
-        // Not sure of a straight forward solution at this point.
-        // if(e.key === 'ArrowDown'){
-        //     document.getElementById('newsButton').click()
-        // }
-    } else {
-        if(getCurrentView() === VIEWS.landing){
-            if(e.key === 'ArrowUp'){
-                document.getElementById('newsButton').click()
-            }
-        }
-    }
-})
-
+//document.addEventListener('keydown', (e) => {
+//    if(newsActive){
+//        if(e.key === 'ArrowRight' || e.key === 'ArrowLeft'){
+//            document.getElementById(e.key === 'ArrowRight' ? 'newsNavigateRight' : 'newsNavigateLeft').click()
+//        }
+//        // Interferes with scrolling an article using the down arrow.
+//        // Not sure of a straight forward solution at this point.
+//        // if(e.key === 'ArrowDown'){
+//        //     document.getElementById('newsButton').click()
+//        // }
+//    } else {
+//        if(getCurrentView() === VIEWS.landing){
+//            if(e.key === 'ArrowUp'){
+//                document.getElementById('newsButton').click()
+//            }
+//        }
+//    }
+//})
+//
 /**
  * Display a news article on the UI.
  * 
  * @param {Object} articleObject The article meta object.
  * @param {number} index The article index.
  */
-function displayArticle(articleObject, index){
-    newsArticleTitle.innerHTML = articleObject.title
-    newsArticleTitle.href = articleObject.link
-    newsArticleAuthor.innerHTML = 'by ' + articleObject.author
-    newsArticleDate.innerHTML = articleObject.date
-    newsArticleComments.innerHTML = articleObject.comments
-    newsArticleComments.href = articleObject.commentsLink
-    newsArticleContentScrollable.innerHTML = '<div id="newsArticleContentWrapper"><div class="newsArticleSpacerTop"></div>' + articleObject.content + '<div class="newsArticleSpacerBot"></div></div>'
-    Array.from(newsArticleContentScrollable.getElementsByClassName('bbCodeSpoilerButton')).forEach(v => {
-        v.onclick = () => {
-            const text = v.parentElement.getElementsByClassName('bbCodeSpoilerText')[0]
-            text.style.display = text.style.display === 'block' ? 'none' : 'block'
-        }
-    })
-    newsNavigationStatus.innerHTML = index + ' of ' + newsArr.length
-    newsContent.setAttribute('article', index-1)
-}
-
+//function displayArticle(articleObject, index){
+//    newsArticleTitle.innerHTML = articleObject.title
+//    newsArticleTitle.href = articleObject.link
+//    newsArticleAuthor.innerHTML = 'by ' + articleObject.author
+//    newsArticleDate.innerHTML = articleObject.date
+//    newsArticleComments.innerHTML = articleObject.comments
+//    newsArticleComments.href = articleObject.commentsLink
+//    newsArticleContentScrollable.innerHTML = '<div id="newsArticleContentWrapper"><div class="newsArticleSpacerTop"></div>' + articleObject.content + '<div class="newsArticleSpacerBot"></div></div>'
+//    Array.from(newsArticleContentScrollable.getElementsByClassName('bbCodeSpoilerButton')).forEach(v => {
+//        v.onclick = () => {
+//            const text = v.parentElement.getElementsByClassName('bbCodeSpoilerText')[0]
+//            text.style.display = text.style.display === 'block' ? 'none' : 'block'
+//        }
+//    })
+//    newsNavigationStatus.innerHTML = index + ' of ' + newsArr.length
+//    newsContent.setAttribute('article', index-1)
+//}
+//
 /**
  * Load news information from the RSS feed specified in the
  * distribution index.
  */
-function loadNews(){
-    return new Promise((resolve, reject) => {
-        const distroData = DistroManager.getDistribution()
-        const newsFeed = distroData.getRSS()
-        const newsHost = new URL(newsFeed).origin + '/'
-        $.ajax({
-            url: newsFeed,
-            success: (data) => {
-                const items = $(data).find('item')
-                const articles = []
-
-                for(let i=0; i<items.length; i++){
-                // JQuery Element
-                    const el = $(items[i])
-
-                    // Resolve date.
-                    const date = new Date(el.find('pubDate').text()).toLocaleDateString('en-US', {month: 'short', day: 'numeric', year: 'numeric', hour: 'numeric', minute: 'numeric'})
-
-                    // Resolve comments.
-                    let comments = el.find('slash\\:comments').text() || '0'
-                    comments = comments + ' Comment' + (comments === '1' ? '' : 's')
-
-                    // Fix relative links in content.
-                    let content = el.find('content\\:encoded').text()
-                    let regex = /src="(?!http:\/\/|https:\/\/)(.+?)"/g
-                    let matches
-                    while((matches = regex.exec(content))){
-                        content = content.replace(`"${matches[1]}"`, `"${newsHost + matches[1]}"`)
-                    }
-
-                    let link   = el.find('link').text()
-                    let title  = el.find('title').text()
-                    let author = el.find('dc\\:creator').text()
-
-                    // Generate article.
-                    articles.push(
-                        {
-                            link,
-                            title,
-                            date,
-                            author,
-                            content,
-                            comments,
-                            commentsLink: link + '#comments'
-                        }
-                    )
-                }
-                resolve({
-                    articles
-                })
-            },
-            timeout: 2500
-        }).catch(err => {
-            resolve({
-                articles: null
-            })
-        })
-    })
-}
+//function loadNews(){
+//    return new Promise((resolve, reject) => {
+//        const distroData = DistroManager.getDistribution()
+//        const newsFeed = distroData.getRSS()
+//        const newsHost = new URL(newsFeed).origin + '/'
+//        $.ajax({
+//            url: newsFeed,
+//            success: (data) => {
+//                const items = $(data).find('item')
+//                const articles = []
+//
+//                for(let i=0; i<items.length; i++){
+//                // JQuery Element
+//                    const el = $(items[i])
+//
+//                    // Resolve date.
+//                    const date = new Date(el.find('pubDate').text()).toLocaleDateString('en-US', {month: 'short', day: 'numeric', year: 'numeric', hour: 'numeric', minute: 'numeric'})
+//
+//                    // Resolve comments.
+//                    let comments = el.find('slash\\:comments').text() || '0'
+//                    comments = comments + ' Comment' + (comments === '1' ? '' : 's')
+//
+//                    // Fix relative links in content.
+//                    let content = el.find('content\\:encoded').text()
+//                    let regex = /src="(?!http:\/\/|https:\/\/)(.+?)"/g
+//                    let matches
+//                    while((matches = regex.exec(content))){
+//                        content = content.replace(`"${matches[1]}"`, `"${newsHost + matches[1]}"`)
+//                    }
+//
+//                    let link   = el.find('link').text()
+//                    let title  = el.find('title').text()
+//                    let author = el.find('dc\\:creator').text()
+//
+//                    // Generate article.
+//                    articles.push(
+//                        {
+//                            link,
+//                            title,
+//                            date,
+//                            author,
+//                            content,
+//                            comments,
+//                            commentsLink: link + '#comments'
+//                        }
+//                    )
+//                }
+//                resolve({
+//                    articles
+//                })
+//            },
+//            timeout: 2500
+//        }).catch(err => {
+//            resolve({
+//                articles: null
+//            })
+//        })
+//    })
+//}

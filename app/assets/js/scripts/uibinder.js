@@ -66,7 +66,6 @@ function showMainUI(data){
     updateSelectedServer(data.getServer(ConfigManager.getSelectedServer()))
     refreshServerStatus()
     setTimeout(() => {
-        document.getElementById('frameBar').style.backgroundColor = '#111'
         document.body.style.backgroundImage = `url('assets/images/backgrounds/${document.body.getAttribute('bkid')}.jpg')`
         $('#main').attr( "style", "display: flex;" )
 

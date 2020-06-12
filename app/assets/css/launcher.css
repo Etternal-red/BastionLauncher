@@ -66,6 +66,7 @@ body, button {
     transition: background-color 1s ease;
     /*background-color: rgba(0, 0, 0, 0.5);*/
     -webkit-user-select: none;
+    background: #111;
 }
 
 /* Undraggable region on the top of the frame. */
