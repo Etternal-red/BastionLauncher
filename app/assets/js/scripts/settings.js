@@ -301,17 +301,14 @@ function settingsSaveDisabled(v){
 }
 
 /* Closes the settings view and saves all data. */
-settingsNavDone.onclick = () => {
-    if (getCurrentView() == VIEWS.landing){}
-    else{
+function saveAllSettings() {
     saveSettingsValues()
     saveModConfiguration()
     ConfigManager.save()
     saveDropinModConfiguration()
     saveShaderpackSettings()
-    switchView(getCurrentView(), VIEWS.landing)
-    }
 }
+
 
 /**
  * Account Management Tab

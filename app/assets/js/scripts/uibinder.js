@@ -18,7 +18,8 @@ const VIEWS = {
     landing: '#landingContainer',
     login: '#loginContainer',
     settings: '#settingsContainer',
-    welcome: '#welcomeContainer'
+    welcome: '#welcomeContainer',
+    store: '#storeContainer'
 }
 
 // The currently shown view container.
@@ -37,6 +38,7 @@ let currentView
  * fades in.
  */
 function switchView(current, next, currentFadeTime = 500, nextFadeTime = 500, onCurrentFade = () => {}, onNextFade = () => {}){
+    
     currentView = next
     $(`${current}`).fadeOut(currentFadeTime, () => {
         onCurrentFade()

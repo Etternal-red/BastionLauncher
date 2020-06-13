@@ -82,7 +82,6 @@ function setDownloadPercentage(value, max, percent = ((value/max)*100)){
 function setLaunchEnabled(val){
     document.getElementById('launch_button').disabled = !val
 }
-
 // Bind launch button
 document.getElementById('launch_button').addEventListener('click', function(e){
     loggerLanding.log('Launching game..')
@@ -107,15 +106,6 @@ document.getElementById('launch_button').addEventListener('click', function(e){
         })
     }
 })
-
-// Bind settings button
-document.getElementById('settingsMediaButton').onclick = (e) => {
-    if (getCurrentView() == VIEWS.settings){}
-    else {
-        prepareSettings()
-        switchView(getCurrentView(), VIEWS.settings)
-    }
-}
 
 // Bind avatar overlay button.
 //document.getElementById('avatarOverlay').onclick = (e) => {
