@@ -10,7 +10,7 @@
  * @returns {boolean} Whether or not the overlay is visible.
  */
 function isOverlayVisible(){
-    return document.getElementById('main').hasAttribute('overlay')
+    return document.getElementById('sidemain').hasAttribute('overlay')
 }
 
 let overlayHandlerContent
@@ -67,7 +67,7 @@ function bindOverlayKeys(state, content, dismissable){
  */
 function toggleOverlay(toggleState, dismissable = false, content = 'overlayContent'){
     if(toggleState == null){
-        toggleState = !document.getElementById('main').hasAttribute('overlay')
+        toggleState = !document.getElementById('sidemain').hasAttribute('overlay')
     }
     if(typeof dismissable === 'string'){
         content = dismissable
@@ -75,9 +75,9 @@ function toggleOverlay(toggleState, dismissable = false, content = 'overlayConte
     }
     bindOverlayKeys(toggleState, content, dismissable)
     if(toggleState){
-        document.getElementById('main').setAttribute('overlay', true)
+        document.getElementById('sidemain').setAttribute('overlay', true)
         // Make things untabbable.
-        $('#main *').attr('tabindex', '-1')
+        $('#sidemain *').attr('tabindex', '-1')
         $('#' + content).parent().children().hide()
         $('#' + content).show()
         if(dismissable){
@@ -94,9 +94,9 @@ function toggleOverlay(toggleState, dismissable = false, content = 'overlayConte
             }
         })
     } else {
-        document.getElementById('main').removeAttribute('overlay')
+        document.getElementById('sidemain').removeAttribute('overlay')
         // Make things tabbable.
-        $('#main *').removeAttr('tabindex')
+        $('#sidemain *').removeAttr('tabindex')
         $('#overlayContainer').fadeOut({
             duration: 250,
             start: () => {

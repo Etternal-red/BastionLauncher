@@ -359,10 +359,10 @@ function bindAuthAccountLogOut(){
             if(Object.keys(ConfigManager.getAuthAccounts()).length === 1){
                 isLastAccount = true
                 setOverlayContent(
-                    'Warning<br>This is Your Last Account',
-                    'In order to use the launcher you must be logged into at least one account. You will need to login again after.<br><br>Are you sure you want to log out?',
-                    'I\'m Sure',
-                    'Cancel'
+                    '¿Deseas desconectarte?',
+                    'Para jugar, necesitas estar conectado. Presionando sí, deberás volver a ingresar con una cuenta Etternal. ¿Deseas salir?',
+                    'Sí',
+                    'No'
                 )
                 setOverlayHandler(() => {
                     processLogOut(val, isLastAccount)

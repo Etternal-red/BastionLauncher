@@ -69,7 +69,7 @@ function showMainUI(data){
     refreshServerStatus()
     setTimeout(() => {
         document.body.style.backgroundImage = `url('assets/images/backgrounds/${document.body.getAttribute('bkid')}.jpg')`
-        $('#main').attr( "style", "display: flex;" )
+        // $('#sidemain').attr( "style", "display: flex;" )
 
         const isLoggedIn = Object.keys(ConfigManager.getAuthAccounts()).length > 0
 
@@ -80,13 +80,16 @@ function showMainUI(data){
         }
 
         if(ConfigManager.isFirstLaunch()){
+            $('#fullmain').show()
             currentView = VIEWS.welcome
             $(VIEWS.welcome).fadeIn(1000)
         } else {
             if(isLoggedIn){
+                $('#sidemain').attr( "style", "display: flex;" )
                 currentView = VIEWS.landing
                 $(VIEWS.landing).fadeIn(1000)
             } else {
+                $('#fullmain').show()
                 currentView = VIEWS.login
                 $(VIEWS.login).fadeIn(1000)
             }

@@ -18,7 +18,7 @@
             background-size: cover;
             -webkit-user-select: none;
         }
-        #main {
+        #sidemain, #fullmain {
             display: none;
             height: calc(100% - 22px);
             background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 100%);
@@ -26,9 +26,10 @@
             position: absolute;
             z-index: 10;
         }
-        #main[overlay] {
+        #sidemain[overlay], #fullmain[overlay] {
             filter: blur(3px) contrast(0.9) brightness(1.0);
         }
+        
         #secondmain{
             display: block;
             height: calc(100% - 22px);
@@ -41,11 +42,11 @@
 </head>
 <body bkid="<%=bkid%>">
     <% include frame.ejs %>
-    <div id="secondmain" style="display:none;">
+    <div id="fullmain" style="display:none;">
         <% include welcome.ejs %>
         <% include login.ejs %>
     </div>
-    <div id="main">
+    <div id="sidemain" style="display:none;">
         <% include sidebar.ejs %>
         <% include landing.ejs %>
         <% include store.ejs %>
