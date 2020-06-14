@@ -286,6 +286,20 @@
                 ]
               },
               {
+                "id": "generated.forgemod:optifine:1.15.2_HD_U_G1_pre24@jar",
+                "name": "OptiFine",
+                "type": "ForgeMod",
+                "required": {
+                  "value": false,
+                  "def": false
+                },
+                "artifact": {
+                  "size": 5524093,
+                  "MD5": "71481cee3c4e9a2852d90c2ae3ab354e",
+                  "url": "https://etternal.red/gamefiles/repo/forgemods/preview_OptiFine_1.15.2_HD_U_G1_pre24.jar"
+                }
+              },
+              {
                 "id": "patcher-1.jar",
                 "name": "patcher-1.jar",
                 "type": "File",
