@@ -69,8 +69,11 @@ Como última parte genera todo usando el siguiente comando.
 **NOTA IMPORTANTE**: Durante la instalación, el instalador de Forge aparecerá. En la consola, aparecerá algo similar a lo siguiente.
 
 >[info] [FG3 Adapter]: ============== [ IMPORTANT ] ==============
+
 >[info] [FG3 Adapter]: When the installer opens please set the client installation directory to:
+
 >[info] [FG3 Adapter]: [ROOT]\files\work
+
 >[info] [FG3 Adapter]: =========================================
 
 Deberás ir a ese directorio en el instalador de Forge para que todo salga correcto.
