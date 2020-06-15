@@ -68,7 +68,6 @@ function showMainUI(data){
     updateSelectedServer(data.getServer(ConfigManager.getSelectedServer()))
     refreshServerStatus()
     setTimeout(() => {
-        document.body.style.backgroundImage = `url('assets/images/backgrounds/${document.body.getAttribute('bkid')}.jpg')`
         // $('#sidemain').attr( "style", "display: flex;" )
 
         const isLoggedIn = Object.keys(ConfigManager.getAuthAccounts()).length > 0

@@ -3,7 +3,7 @@
     "discord": {
         "clientId": "719600528903897109",
         "smallImageText": "Servidor Etternal",
-        "smallImageKey": "seal-circle"
+        "smallImageKey": "logo"
     },
     "rss": "",
     "servers": [
@@ -15,6 +15,11 @@
             "version": "0.5",
             "address": "mc.etternal.red",
             "minecraftVersion": "1.15.2",
+            "discord": {
+                "shortId": "Etternal",
+                "largeImageText": "Servidor de Etternal.red",
+                "largeImageKey": "logo"
+            },
             "mainServer": true,
             "autoconnect": true,
             "modules": [
