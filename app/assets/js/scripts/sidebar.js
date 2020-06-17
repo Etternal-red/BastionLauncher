@@ -15,19 +15,19 @@ document.getElementById('sidebar_index').onclick = (e) => {
 }
 
 // Bind store button
-document.getElementById('sidebar_store').onclick = (e) => {
-    switch (getCurrentView()) {
-        case VIEWS.store:
-            break;
-        case VIEWS.settings:
-            saveAllSettings()
-            switchView(getCurrentView(), VIEWS.store)
-            break;
-        default:
-            switchView(getCurrentView(), VIEWS.store)
-            break;
-    }
-}
+//document.getElementById('sidebar_store').onclick = (e) => {
+//    switch (getCurrentView()) {
+//        case VIEWS.store:
+//            break;
+//        case VIEWS.settings:
+//            saveAllSettings()
+//            switchView(getCurrentView(), VIEWS.store)
+//            break;
+//        default:
+//            switchView(getCurrentView(), VIEWS.store)
+//            break;
+//    }
+//}
 
 // Bind settings button
 document.getElementById('sidebar_config').onclick = (e) => {
