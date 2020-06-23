@@ -18,7 +18,6 @@ const VIEWS = {
     landing: '#landingContainer',
     login: '#loginContainer',
     settings: '#settingsContainer',
-    welcome: '#welcomeContainer',
     store: '#storeContainer'
 }
 
@@ -77,21 +76,14 @@ function showMainUI(data){
         if(!isDev && isLoggedIn){
             validateSelectedAccount()
         }
-
-        if(ConfigManager.isFirstLaunch()){
-            $('#fullmain').show()
-            currentView = VIEWS.welcome
-            $(VIEWS.welcome).fadeIn(1000)
+        if(isLoggedIn){
+            $('#sidemain').attr( "style", "display: flex;" )
+            currentView = VIEWS.landing
+            $(VIEWS.landing).fadeIn(1000)
         } else {
-            if(isLoggedIn){
-                $('#sidemain').attr( "style", "display: flex;" )
-                currentView = VIEWS.landing
-                $(VIEWS.landing).fadeIn(1000)
-            } else {
-                $('#fullmain').show()
-                currentView = VIEWS.login
-                $(VIEWS.login).fadeIn(1000)
-            }
+            $('#fullmain').show()
+            currentView = VIEWS.login
+            $(VIEWS.login).fadeIn(1000)
         }
 
         setTimeout(() => {
