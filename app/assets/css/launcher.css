@@ -1392,6 +1392,7 @@ input:checked + .toggleSwitchSlider:before {
 .settingsAuthAccountRight {
     display: flex;
     width: 100%;
+    position: relative;
 }
 
 /* Account details container. */
@@ -1429,6 +1430,9 @@ input:checked + .toggleSwitchSlider:before {
     justify-content: space-between;
     align-items: flex-end;
     padding: 10px;
+    position: absolute;
+    right: 0;
+    height: 100%;
 }
 
 /* Account select button shared styles. */
