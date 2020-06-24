@@ -20,9 +20,14 @@ const VIEWS = {
     settings: '#settingsContainer',
     store: '#storeContainer'
 }
+const MAINS = {
+    full: '#fullmain',
+    side: '#sidemain'
+}
 
 // The currently shown view container.
 let currentView
+let currentMain
 
 /**
  * Switch launcher views.
@@ -36,11 +41,22 @@ let currentView
  * @param {*} onNextFade Optional. Callback function to execute when the next view
  * fades in.
  */
+function switchMain(current, next, currentFadeTime = 500, nextFadeTime = 500, onCurrentFade = () => {}, onNextFade = () => {}){
+    currentMain = next
+    $(`${current}`).fadeOut(currentFadeTime, () => {
+        onCurrentFade()
+        $(`${next}`).fadeIn(nextFadeTime, () => {
+            onNextFade()
+        }).css("display","flex");
+    })
+}
+
 function switchView(current, next, currentFadeTime = 500, nextFadeTime = 500, onCurrentFade = () => {}, onNextFade = () => {}){
     
     currentView = next
     $(`${current}`).fadeOut(currentFadeTime, () => {
         onCurrentFade()
+
         $(`${next}`).fadeIn(nextFadeTime, () => {
             onNextFade()
         })
@@ -54,6 +70,10 @@ function switchView(current, next, currentFadeTime = 500, nextFadeTime = 500, on
  */
 function getCurrentView(){
     return currentView
+}
+
+function getCurrentMain(){
+    return currentMain
 }
 
 function showMainUI(data){
@@ -79,10 +99,11 @@ function showMainUI(data){
         if(isLoggedIn){
             $('#sidemain').attr( "style", "display: flex;" )
             currentView = VIEWS.landing
+            currentMain = MAINS.full
             $(VIEWS.landing).fadeIn(1000)
         } else {
             $('#fullmain').show()
-            currentView = VIEWS.login
+            currentView = MAINS.side
             $(VIEWS.login).fadeIn(1000)
         }
 
@@ -337,7 +358,9 @@ async function validateSelectedAccount(){
                     loginCancelEnabled(true)
                 }
                 toggleOverlay(false)
-                switchView(getCurrentView(), VIEWS.login)
+                switchView(getCurrentView(), VIEWS.login,500, 500, () => {
+                switchMain(MAINS.side,MAINS.full)
+                })
             })
             setDismissHandler(() => {
                 if(accLen > 1){

@@ -320,6 +320,7 @@ document.getElementById('settingsAddAccount').onclick = (e) => {
         loginViewOnCancel = VIEWS.settings
         loginViewOnSuccess = VIEWS.settings
         loginCancelEnabled(true)
+        switchMain(MAINS.side,MAINS.full)
     })
 }
 
@@ -367,6 +368,7 @@ function bindAuthAccountLogOut(){
                 setOverlayHandler(() => {
                     processLogOut(val, isLastAccount)
                     toggleOverlay(false)
+                    switchMain(MAINS.side, MAINS.full)
                     switchView(getCurrentView(), VIEWS.login)
                 })
                 setDismissHandler(() => {

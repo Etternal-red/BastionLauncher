@@ -2,13 +2,12 @@
 <head>
     <meta charset="utf-8" http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline'"/>
     <title>Launcher de Etternal</title>
-    <script src="./assets/js/jquery-3.5.1.min.js" onload="window.$ = window.jQuery = module.exports;"></script> 
-    <script src="./assets/js/popper.min.js"></script>
-    <script src="./assets/js/bootstrap.min.js"></script>
     <script src="./assets/js/scripts/uicore.js"></script>
     <script src="./assets/js/scripts/uibinder.js"></script>
+    <script>require('popper.js')</script>
+    <script>require('bootstrap')</script>
+    <link type="text/css" rel="stylesheet" href="./assets/css/bootstrap.min.css">
     <link type="text/css" rel="stylesheet" href="./assets/css/all.min.css">
-    <link type="text/css" rel="stylesheet" href="./assets/css/bootstrap.min.css"> 
     <link type="text/css" rel="stylesheet" href="./assets/css/launcher.css">
     <style>
         body {
@@ -54,11 +53,5 @@
     <div id="loadingContainer">
         <div class="loading-pulse"></div>
     </div>
-    <script>
-        // Load language
-        for(let key of Object.keys(Lang.query('html'))){
-            document.getElementById(key).innerHTML = Lang.query(`html.${key}`)
-        }
-    </script>
 </body>
 </html>

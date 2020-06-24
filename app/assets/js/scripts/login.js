@@ -248,6 +248,7 @@ loginCancelButton.onclick = (e) => {
             loginViewCancelHandler()
             loginViewCancelHandler = null
         }
+        switchMain(MAINS.full, MAINS.side)
     })
 }
 
@@ -272,6 +273,7 @@ loginButton.addEventListener('click', () => {
                 // Temporary workaround
                 if(loginViewOnSuccess === VIEWS.settings){
                     prepareSettings()
+                    switchMain(MAINS.full, MAINS.side)
                 }
                 loginViewOnSuccess = VIEWS.landing // Reset this for good measure.
                 loginCancelEnabled(false) // Reset this for good measure.
@@ -283,6 +285,7 @@ loginButton.addEventListener('click', () => {
                 loginLoading(false)
                 loginButton.innerHTML = loginButton.innerHTML.replace(Lang.queryJS('login.success'), Lang.queryJS('login.login'))
                 formDisabled(false)
+                switchMain(MAINS.full, MAINS.side)
             })
         }, 1000)
     }).catch((err) => {
