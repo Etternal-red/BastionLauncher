@@ -460,8 +460,7 @@ let hasRPC = false
 // Joined server regex
 const SERVER_JOINED_REGEX = /\[.+\]: \[CHAT\] [a-zA-Z0-9_]{1,16} joined the game/
 const GAME_JOINED_REGEX = /\[.+\]: Skipping bad option: lastServer:/
-const GAME_LAUNCH_REGEX = /^\[.+\]: MinecraftForge .+ Initialized$/
-
+const GAME_LAUNCH_REGEX = /^\[.+\]: Setting user: .+$/
 let aEx
 let serv
 let versionData
@@ -622,14 +621,15 @@ function dlAsync(login = true){
             let allGood = true
 
             // If these properties are not defined it's likely an error.
-            if(m.result.forgeData == null || m.result.versionData == null){
-                loggerLaunchSuite.error('Error during validation:', m.result)
+            // if(m.result.forgeData == null || m.result.versionData == null){
+            //     loggerLaunchSuite.error('Error during validation:', m.result)
+        //     loggerLaunchSuite.error('Error during launch', m.result.error)
+        //     showLaunchFailure('Error During Launch', 'Please check the console (CTRL + Shift + i) for more details.')
 
-                loggerLaunchSuite.error('Error during launch', m.result.error)
-                showLaunchFailure('Error During Launch', 'Please check the console (CTRL + Shift + i) for more details.')
+        //     allGood = false
+        // }
 
-                allGood = false
-            }
+
 
             forgeData = m.result.forgeData
             versionData = m.result.versionData
