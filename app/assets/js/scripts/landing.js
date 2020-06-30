@@ -144,7 +144,7 @@ function updateSelectedServer(serv){
     setLaunchEnabled(serv != null)
 }
 // Real text is set in uibinder.js on distributionIndexDone.
-server_selection_button.innerHTML = 'Cargando..'
+server_selection_button.innerHTML = 'Cargando...'
 server_selection_button.onclick = (e) => {
     e.target.blur()
     toggleServerSelection(true)
@@ -321,7 +321,7 @@ function asyncSystemScan(mcVersion, launchAfter = true){
                     'Instalar manualmente'
                 )
                 setOverlayHandler(() => {
-                    setLaunchDetails('Preparando la descarga de Java..')
+                    setLaunchDetails('Preparando la descarga de Java...')
                     sysAEx.send({task: 'changeContext', class: 'AssetGuard', args: [ConfigManager.getCommonDirectory(),ConfigManager.getJavaExecutable()]})
                     sysAEx.send({task: 'execute', function: '_enqueueOpenJDK', argsArr: [ConfigManager.getDataDirectory()]})
                     toggleOverlay(false)
@@ -368,7 +368,7 @@ function asyncSystemScan(mcVersion, launchAfter = true){
             if(m.result === true){
 
                 // Oracle JRE enqueued successfully, begin download.
-                setLaunchDetails('Descargando Java..')
+                setLaunchDetails('Descargando Java...')
                 sysAEx.send({task: 'execute', function: 'processDlQueues', argsArr: [[{id:'java', limit:1}]]})
 
             } else {
@@ -448,7 +448,7 @@ function asyncSystemScan(mcVersion, launchAfter = true){
     })
 
     // Begin system Java scan.
-    setLaunchDetails('Chequeando la información del sistema..')
+    setLaunchDetails('Chequeando la información del sistema...')
     sysAEx.send({task: 'execute', function: 'validateJava', argsArr: [ConfigManager.getDataDirectory()]})
 
 }
@@ -481,7 +481,7 @@ function dlAsync(login = true){
         }
     }
 
-    setLaunchDetails('Please wait..')
+    setLaunchDetails('Por favor, espera...')
     toggleLaunchArea(true)
     setLaunchPercentage(0, 100)
 
@@ -529,27 +529,27 @@ function dlAsync(login = true){
                 case 'distribution':
                     setLaunchPercentage(20, 100)
                     loggerLaunchSuite.log('Validated distibution index.')
-                    setLaunchDetails('Viendo información de la versión..')
+                    setLaunchDetails('Viendo información de la versión...')
                     break
                 case 'version':
                     setLaunchPercentage(40, 100)
                     loggerLaunchSuite.log('Version data loaded.')
-                    setLaunchDetails('Validando los archivos locales..')
+                    setLaunchDetails('Validando los archivos locales...')
                     break
                 case 'assets':
                     setLaunchPercentage(60, 100)
                     loggerLaunchSuite.log('Asset Validation Complete')
-                    setLaunchDetails('Validando las librerías locales..')
+                    setLaunchDetails('Validando las librerías locales...')
                     break
                 case 'libraries':
                     setLaunchPercentage(80, 100)
                     loggerLaunchSuite.log('Library validation complete.')
-                    setLaunchDetails('Validando otros archivos..')
+                    setLaunchDetails('Validando otros archivos...')
                     break
                 case 'files':
                     setLaunchPercentage(100, 100)
                     loggerLaunchSuite.log('File validation complete.')
-                    setLaunchDetails('Descargando archivos..')
+                    setLaunchDetails('Descargando archivos...')
                     break
             }
         } else if(m.context === 'progress'){
@@ -648,7 +648,7 @@ function dlAsync(login = true){
                     if(GAME_LAUNCH_REGEX.test(data.trim())){
                         toggleLaunchArea(false)
                         if(hasRPC){
-                            DiscordWrapper.updateDetails('Cargando el juego..')
+                            DiscordWrapper.updateDetails('Cargando el juego')
                         }
                         proc.stdout.on('data', gameStateChange)
                         proc.stdout.removeListener('data', tempListener)
