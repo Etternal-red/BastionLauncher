@@ -14,16 +14,16 @@ const minecraftAgent = {
     name: 'Minecraft',
     version: 1
 }
-const authpath = 'https://api.bastion.red/authserver'
+const authpath = 'https://cuenta.bastion.red/api/yggdrasil/authserver'
 const statuses = [
     {
-        service: 'https://api.bastion.red/sessionserver',
+        service: 'https://cuenta.bastion.red/api/yggdrasil/sessionserver',
         status: 'grey',
         name: 'Servicio de Sesión',
         essential: true
     },
     {
-        service: 'https://api.bastion.red/authserver',
+        service: 'https://cuenta.bastion.red/api/yggdrasil/authserver',
         status: 'grey',
         name: 'Servicio de Autentificación',
         essential: true

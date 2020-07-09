@@ -353,7 +353,7 @@ class ProcessBuilder {
         //args.push('-Dlog4j.configurationFile=D:\\WesterosCraft\\game\\common\\assets\\log_configs\\client-1.12.xml')
 
         // Shhhh
-        args.push('-javaagent:patcher-1.jar=api.bastion.red')
+        args.push('-javaagent:patcher-1.jar=cuenta.bastion.red/api/yggdrasil')
         
         // Java Arguments
         if(process.platform === 'darwin'){
