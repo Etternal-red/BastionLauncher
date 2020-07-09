@@ -303,40 +303,7 @@
                   "MD5": "71481cee3c4e9a2852d90c2ae3ab354e",
                   "url": "https://etternal.red/gamefiles/repo/forgemods/preview_OptiFine_1.15.2_HD_U_G1_pre24.jar"
                 }
-              },
-              {
-                "id": "patcher-1.jar",
-                "name": "patcher-1.jar",
-                "type": "File",
-                "required": {
-                  "value": true,
-                  "def": true
-                },
-                "artifact": {
-                  "size": 308587,
-                  "MD5": "ac4d1219c865463a1c5aa076f3d19ac8",
-                  "url": "https://etternal.red/gamefiles/patcher-1.jar",
-                  "path": "patcher-1.jar"
-                }
-              }
-            ]
-          },
-          {
-            "id": "Vanilla-1.16",
-            "name": "Beta 1.16.1",
-            "description": "Para testeo.",
-            "icon": "https://www.etternal.red/gamefiles/servericon.png",
-            "version": "0.5",
-            "address": "mc.etternal.red",
-            "minecraftVersion": "1.16.1",
-            "discord": {
-                "shortId": "Etternal",
-                "largeImageText": "Servidor de Etternal.red",
-                "largeImageKey": "logo"
-            },
-            "mainServer": true,
-            "autoconnect": false,
-            "modules": [
+              },ma
               {
                 "id": "patcher-1.jar",
                 "name": "patcher-1.jar",

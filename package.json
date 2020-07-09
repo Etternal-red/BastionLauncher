@@ -1,11 +1,11 @@
 {
-  "name": "etternal",
+  "name": "ettebastion-launcherrnal",
   "version": "0.9.1",
-  "productName": "Etternal Launcher",
-  "description": "Launcher para jugar al servidor de Etternal",
-  "author": "Etternal Team & Daniel Scalzi",
+  "productName": "Bastión Launcher",
+  "description": "Launcher para jugar con Bastión",
+  "author": "Bastion Team & Daniel Scalzi",
   "license": "UNLICENSED",
-  "homepage": "https://etternal.red",
+  "homepage": "https://bastion.red",
   "bugs": {
     "url": "https://github.com/jacquelynra/Etternal-Launcher/issues"
   },

@@ -18,10 +18,10 @@ function getCurrentPlatform(){
 builder.build({
     targets: (process.argv[2] != null && Platform[process.argv[2]] != null ? Platform[process.argv[2]] : getCurrentPlatform()).createTarget(),
     config: {
-        appId: 'etternal-launcher',
-        productName: 'Launcher de Etternal',
+        appId: 'bastion-launcher',
+        productName: 'Bastión Launcher',
         artifactName: '${productName}-setup-${version}.${ext}',
-        copyright: 'Copyright © 2018-2020 Etternal.red & Daniel Scalzi',
+        copyright: 'Copyright © 2018-2020 Etternal.red | Bastion.red & Daniel Scalzi',
         directories: {
             buildResources: 'build',
             output: 'dist'
@@ -46,8 +46,8 @@ builder.build({
         },
         linux: {
             target: 'AppImage',
-            maintainer: 'Etternal',
-            vendor: 'Etternal',
+            maintainer: 'Bastion',
+            vendor: 'Bastion',
             synopsis: 'Modded Minecraft Launcher',
             description: 'Custom launcher which allows users to join modded servers. All mods, configurations, and updates are handled automatically.',
             category: 'Game'

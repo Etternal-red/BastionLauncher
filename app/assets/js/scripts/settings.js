@@ -361,7 +361,7 @@ function bindAuthAccountLogOut(){
                 isLastAccount = true
                 setOverlayContent(
                     '¿Deseas desconectarte?',
-                    'Para jugar, necesitas estar conectado. Presionando sí, deberás volver a ingresar con una cuenta Etternal. ¿Deseas salir?',
+                    'Para jugar, necesitas estar conectado. Presionando sí, deberás volver a ingresar con una cuenta Bastión. ¿Deseas salir?',
                     'Sí',
                     'No'
                 )

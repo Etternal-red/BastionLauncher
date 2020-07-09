@@ -316,7 +316,7 @@ class ProcessBuilder {
 
         // Java Arguments
         if(process.platform === 'darwin'){
-            args.push('-Xdock:name=Etternal-launcher')
+            args.push('-Xdock:name=Bastion-launcher')
             args.push('-Xdock:icon=' + path.join(__dirname, '..', 'images', 'minecraft.icns'))
         }
         args.push('-Xmx' + ConfigManager.getMaxRAM())
@@ -357,7 +357,7 @@ class ProcessBuilder {
         
         // Java Arguments
         if(process.platform === 'darwin'){
-            args.push('-Xdock:name=Etternal-Launcher')
+            args.push('-Xdock:name=Bastion-launcher')
             args.push('-Xdock:icon=' + path.join(__dirname, '..', 'images', 'minecraft.icns'))
         }
         args.push('-Xmx' + ConfigManager.getMaxRAM())

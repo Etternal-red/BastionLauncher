@@ -7,7 +7,7 @@
  */
 // Requirements
 const request = require('request')
-const logger  = require('./loggerutil')('%c[Etternal]', 'color: #a02d2a; font-weight: bold')
+const logger  = require('./loggerutil')('%c[Bastión]', 'color: #a02d2a; font-weight: bold')
 
 // Constants
 const minecraftAgent = {
