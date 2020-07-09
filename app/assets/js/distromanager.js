@@ -537,7 +537,7 @@ exports.pullRemote = function(){
         return exports.pullLocal()
     }
     return new Promise((resolve, reject) => {
-        const distroURL = 'https://etternal.red/gamefiles/distribution.json'
+        const distroURL = 'https://launcher.bastion.red/distribution.json'
         const opts = {
             url: distroURL,
             timeout: 2500

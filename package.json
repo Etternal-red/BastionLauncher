@@ -1,13 +1,13 @@
 {
   "name": "ettebastion-launcherrnal",
-  "version": "0.9.1",
+  "version": "0.9.2",
   "productName": "Bastión Launcher",
   "description": "Launcher para jugar con Bastión",
   "author": "Bastion Team & Daniel Scalzi",
   "license": "UNLICENSED",
   "homepage": "https://bastion.red",
   "bugs": {
-    "url": "https://github.com/jacquelynra/Etternal-Launcher/issues"
+    "url": "https://github.com/Etternal-red/BastionLauncher/issues"
   },
   "private": true,
   "main": "index.js",
@@ -49,6 +49,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jacquelynra/Etternal-Launcher.git"
+    "url": "git+https://github.com/Etternal-red/BastionLauncher.git"
   }
 }

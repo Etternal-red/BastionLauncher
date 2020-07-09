@@ -1,5 +1,5 @@
 {
-    "version": "0.9.1",
+    "version": "0.9.2",
     "discord": {
         "clientId": "719600528903897109",
         "smallImageText": "Servidor Etternal",
@@ -303,7 +303,7 @@
                   "MD5": "71481cee3c4e9a2852d90c2ae3ab354e",
                   "url": "https://etternal.red/gamefiles/repo/forgemods/preview_OptiFine_1.15.2_HD_U_G1_pre24.jar"
                 }
-              },ma
+              },
               {
                 "id": "patcher-1.jar",
                 "name": "patcher-1.jar",

@@ -123,7 +123,7 @@ function updateSelectedAccount(authUser){
             username = authUser.displayName
         }
         if(authUser.uuid != null){
-            document.getElementById('avatarContainer').style.backgroundImage = `url('https://cuenta.etternal.red/avatar/user/${authUser.displayName}')`
+            document.getElementById('avatarContainer').style.backgroundImage = `url('https://cuenta.bastion.red/avatar/user/${authUser.displayName}')`
         }
     }
     user_text.innerHTML = username
@@ -316,7 +316,7 @@ function asyncSystemScan(mcVersion, launchAfter = true){
                 // Show this information to the user.
                 setOverlayContent(
                     'Ninguna versión de Java compatible',
-                    'Para jugar en el servidor de Etternal, necesitas una instalación de Java 8 de 64-bit. Si aceptas instalarlas, estás aceptando los <a href="http://www.oracle.com/technetwork/java/javase/terms/license/index.html">terminos de condiciones de Oracle</a>.',
+                    'Para jugar necesitas una instalación de Java 8 de 64-bit. Si aceptas instalarlas, estás aceptando los <a href="http://www.oracle.com/technetwork/java/javase/terms/license/index.html">terminos de condiciones de Oracle</a>.',
                     'Instalar Java',
                     'Instalar manualmente'
                 )

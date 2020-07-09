@@ -14,25 +14,19 @@ const minecraftAgent = {
     name: 'Minecraft',
     version: 1
 }
-const authpath = 'https://cuenta.etternal.red/api/yggdrasil/authserver'
+const authpath = 'https://api.bastion.red/authserver'
 const statuses = [
     {
-        service: 'mc.etternal.red',
+        service: 'https://api.bastion.red/sessionserver',
         status: 'grey',
-        name: 'Servidor',
+        name: 'Servicio de Sesión',
         essential: true
     },
     {
-        service: 'cuenta.etternal.red/api/yggdrasil/sessionserver',
-        status: 'grey',
-        name: 'Servicio de Sesión',
-        essential: false
-    },
-    {
-        service: 'cuenta.etternal.red/api/yggdrasil/authserver',
+        service: 'https://api.bastion.red/authserver',
         status: 'grey',
         name: 'Servicio de Autentificación',
-        essential: false
+        essential: true
     },
 ]
 
@@ -70,7 +64,7 @@ exports.statusToHex = function(status){
  */
 exports.status = function(){
     return new Promise((resolve, reject) => {
-        request.get('https://etternal.red/gamefiles/status.json',
+        request.get('https://launcher.bastion.red/status.json',
             {
                 json: true,
                 timeout: 2500

@@ -2,7 +2,7 @@
 # Bienvenido al Bastión Launcher
 El Bastión Launcher está basado en [**HeliosLauncher**](https://github.com/dscalzi/HeliosLauncher). Recomiendo que si necesitas hacer tu propio launcher, no uses este, ya que está integrado con el servidor de Bastión y es recomendado solo usarlo para asuntos relacionados a servidores que usen el Yggdrasil de Bastión.
 
-[![Build Status](https://travis-ci.org/Etternal-red/EtternalLauncher.svg?branch=master)](https://travis-ci.org/Etternal-red/EtternalLauncher)
+[![Build Status](https://travis-ci.org/Etternal-red/BastionLauncher.svg?branch=master)](https://travis-ci.org/Etternal-red/BastionLauncher)
 
 
 
@@ -13,7 +13,7 @@ Primero que todo, necesitas [**Node.js v12**](https://nodejs.org/en/). Para prog
 ### Compilar todo
 Este ejemplo usa este launcher como base, pero como dije anteriormente, es recomendado empezar con el original Helios Launcher.
 
-    > git clone https://github.com/jacquelynra/Etternal-Launcher.git
+    > git clone https://github.com/Etternal-red/BastionLauncher.git
     > cd HeliosLauncher
     > npm install
 
