@@ -1,5 +1,5 @@
 {
-    "version": "0.9.2",
+    "version": "0.9.3",
     "discord": {
         "clientId": "719600528903897109",
         "smallImageText": "Servidor Etternal",
@@ -12,298 +12,17 @@
             "name": "Etternal - Survival+",
             "description": "El servidor oficial de Etternal.red - Survival con modificaciones.",
             "icon": "https://www.etternal.red/gamefiles/servericon.png",
-            "version": "0.5",
+            "version": "1.0",
             "address": "mc.etternal.red",
-            "minecraftVersion": "1.15.2",
+            "minecraftVersion": "1.16.1",
             "discord": {
                 "shortId": "Etternal",
                 "largeImageText": "Servidor de Etternal.red",
                 "largeImageKey": "logo"
             },
             "mainServer": true,
-            "autoconnect": true,
+            "autoconnect": false,
             "modules": [
-              {
-                "id": "net.minecraftforge:forge:1.15.2-31.2.15",
-                "name": "Minecraft Forge (base jar)",
-                "type": "ForgeHosted",
-                "artifact": {
-                  "size": 189586,
-                  "MD5": "ba1c2aa956e45b97f811b14b70d3a05b",
-                  "url": "https://etternal.red/gamefiles/repo/lib/net/minecraftforge/forge/1.15.2-31.2.15/forge-1.15.2-31.2.15.jar"
-                },
-                "subModules": [
-                  {
-                    "id": "1.15.2-31.2.15",
-                    "name": "Minecraft Forge (version.json)",
-                    "type": "VersionManifest",
-                    "artifact": {
-                      "size": 10555,
-                      "MD5": "7e22b70077891f13a65f472366b531c9",
-                      "url": "https://etternal.red/gamefiles/repo/versions/1.15.2-forge-31.2.15/1.15.2-forge-31.2.15.json"
-                    }
-                  },
-                  {
-                    "id": "net.minecraftforge:forge:1.15.2-31.2.15:universal",
-                    "name": "Minecraft Forge (universal jar)",
-                    "type": "Library",
-                    "artifact": {
-                      "size": 2217310,
-                      "MD5": "e2b9c7ac14dc3025e1707aeb3f17ee62",
-                      "url": "https://etternal.red/gamefiles/repo/lib/net/minecraftforge/forge/1.15.2-31.2.15/forge-1.15.2-31.2.15-universal.jar"
-                    },
-                    "subModules": []
-                  },
-                  {
-                    "id": "net.minecraftforge:forge:1.15.2-31.2.15:client",
-                    "name": "Minecraft Forge (client jar)",
-                    "type": "Library",
-                    "artifact": {
-                      "size": 3657418,
-                      "MD5": "2a39719bcd381bc674f500f1668e7f0c",
-                      "url": "https://etternal.red/gamefiles/repo/lib/net/minecraftforge/forge/1.15.2-31.2.15/forge-1.15.2-31.2.15-client.jar"
-                    },
-                    "subModules": []
-                  },
-                  {
-                    "id": "net.minecraft:client:1.15.2:slim",
-                    "name": "Minecraft Forge (client slim)",
-                    "type": "Library",
-                    "artifact": {
-                      "size": 8333902,
-                      "MD5": "9ae10222f494ed1f09e2b5fc6d38c958",
-                      "url": "https://etternal.red/gamefiles/repo/lib/net/minecraft/client/1.15.2/client-1.15.2-slim.jar"
-                    },
-                    "subModules": []
-                  },
-                  {
-                    "id": "net.minecraft:client:1.15.2:extra",
-                    "name": "Minecraft Forge (client extra)",
-                    "type": "Library",
-                    "artifact": {
-                      "size": 7197612,
-                      "MD5": "93e99cf6eab4a25f5811f821a59646c9",
-                      "url": "https://etternal.red/gamefiles/repo/lib/net/minecraft/client/1.15.2/client-1.15.2-extra.jar"
-                    },
-                    "subModules": []
-                  },
-                  {
-                    "id": "net.minecraft:client:1.15.2-20200515.085601:srg",
-                    "name": "Minecraft Forge (client srg)",
-                    "type": "Library",
-                    "artifact": {
-                      "size": 10344805,
-                      "MD5": "fa9446a4839244182f9bec65bdd10634",
-                      "url": "https://etternal.red/gamefiles/repo/lib/net/minecraft/client/1.15.2-20200515.085601/client-1.15.2-20200515.085601-srg.jar"
-                    },
-                    "subModules": []
-                  },
-                  {
-                    "id": "org.ow2.asm:asm:7.2",
-                    "name": "Minecraft Forge (asm)",
-                    "type": "Library",
-                    "artifact": {
-                      "size": 114873,
-                      "MD5": "26cf10dfd4729fd22fcae0694e041167",
-                      "url": "https://etternal.red/gamefiles/repo/lib/org/ow2/asm/asm/7.2/asm-7.2.jar"
-                    }
-                  },
-                  {
-                    "id": "org.ow2.asm:asm-commons:7.2",
-                    "name": "Minecraft Forge (asm-commons)",
-                    "type": "Library",
-                    "artifact": {
-                      "size": 70051,
-                      "MD5": "321121317a6c6221cc26e8f9ee97022f",
-                      "url": "https://etternal.red/gamefiles/repo/lib/org/ow2/asm/asm-commons/7.2/asm-commons-7.2.jar"
-                    }
-                  },
-                  {
-                    "id": "org.ow2.asm:asm-tree:7.2",
-                    "name": "Minecraft Forge (asm-tree)",
-                    "type": "Library",
-                    "artifact": {
-                      "size": 50283,
-                      "MD5": "c7214695c379f25861500e576a1f8cea",
-                      "url": "https://etternal.red/gamefiles/repo/lib/org/ow2/asm/asm-tree/7.2/asm-tree-7.2.jar"
-                    }
-                  },
-                  {
-                    "id": "cpw.mods:modlauncher:5.1.0",
-                    "name": "Minecraft Forge (modlauncher)",
-                    "type": "Library",
-                    "artifact": {
-                      "size": 115795,
-                      "MD5": "ecbd0cf9eafb17ace92fb79b401c875d",
-                      "url": "https://etternal.red/gamefiles/repo/lib/cpw/mods/modlauncher/5.1.0/modlauncher-5.1.0.jar"
-                    }
-                  },
-                  {
-                    "id": "cpw.mods:grossjava9hacks:1.3.0",
-                    "name": "Minecraft Forge (grossjava9hacks)",
-                    "type": "Library",
-                    "artifact": {
-                      "size": 1921,
-                      "MD5": "c5c05d52fcef5479e0ea069f30c6ceb5",
-                      "url": "https://etternal.red/gamefiles/repo/lib/cpw/mods/grossjava9hacks/1.3.0/grossjava9hacks-1.3.0.jar"
-                    }
-                  },
-                  {
-                    "id": "net.minecraftforge:accesstransformers:2.1.1-shadowed",
-                    "name": "Minecraft Forge (accesstransformers)",
-                    "type": "Library",
-                    "artifact": {
-                      "size": 444938,
-                      "MD5": "b1c29c996339414a2eecb357064ad2e3",
-                      "url": "https://etternal.red/gamefiles/repo/lib/net/minecraftforge/accesstransformers/2.1.1/accesstransformers-2.1.1-shadowed.jar"
-                    }
-                  },
-                  {
-                    "id": "net.minecraftforge:eventbus:2.2.0-service",
-                    "name": "Minecraft Forge (eventbus)",
-                    "type": "Library",
-                    "artifact": {
-                      "size": 39776,
-                      "MD5": "5b09da0315a6307c0bf25026fbff23ab",
-                      "url": "https://etternal.red/gamefiles/repo/lib/net/minecraftforge/eventbus/2.2.0/eventbus-2.2.0-service.jar"
-                    }
-                  },
-                  {
-                    "id": "net.minecraftforge:forgespi:2.1.2",
-                    "name": "Minecraft Forge (forgespi)",
-                    "type": "Library",
-                    "artifact": {
-                      "size": 19445,
-                      "MD5": "7c31f89d66f7107f236e9bfe6e232caa",
-                      "url": "https://etternal.red/gamefiles/repo/lib/net/minecraftforge/forgespi/2.1.2/forgespi-2.1.2.jar"
-                    }
-                  },
-                  {
-                    "id": "net.minecraftforge:coremods:2.0.3",
-                    "name": "Minecraft Forge (coremods)",
-                    "type": "Library",
-                    "artifact": {
-                      "size": 21802,
-                      "MD5": "53aef4d28866ac1cc755b69e825d7878",
-                      "url": "https://etternal.red/gamefiles/repo/lib/net/minecraftforge/coremods/2.0.3/coremods-2.0.3.jar"
-                    }
-                  },
-                  {
-                    "id": "net.minecraftforge:unsafe:0.2.0",
-                    "name": "Minecraft Forge (unsafe)",
-                    "type": "Library",
-                    "artifact": {
-                      "size": 2834,
-                      "MD5": "2d1016ebe4c1a63dd50a59d26bd12db1",
-                      "url": "https://etternal.red/gamefiles/repo/lib/net/minecraftforge/unsafe/0.2.0/unsafe-0.2.0.jar"
-                    }
-                  },
-                  {
-                    "id": "com.electronwill.night-config:core:3.6.2",
-                    "name": "Minecraft Forge (core)",
-                    "type": "Library",
-                    "artifact": {
-                      "size": 199091,
-                      "MD5": "243fc0b7f1e509aaca3550c14d8f60af",
-                      "url": "https://etternal.red/gamefiles/repo/lib/com/electronwill/night-config/core/3.6.2/core-3.6.2.jar"
-                    }
-                  },
-                  {
-                    "id": "com.electronwill.night-config:toml:3.6.2",
-                    "name": "Minecraft Forge (toml)",
-                    "type": "Library",
-                    "artifact": {
-                      "size": 31152,
-                      "MD5": "7b2339065e252b1c187d39351d84a09f",
-                      "url": "https://etternal.red/gamefiles/repo/lib/com/electronwill/night-config/toml/3.6.2/toml-3.6.2.jar"
-                    }
-                  },
-                  {
-                    "id": "org.jline:jline:3.12.1",
-                    "name": "Minecraft Forge (jline)",
-                    "type": "Library",
-                    "artifact": {
-                      "size": 732926,
-                      "MD5": "ffd8c9d6eb8a8456ef505c8ef9fc777d",
-                      "url": "https://etternal.red/gamefiles/repo/lib/org/jline/jline/3.12.1/jline-3.12.1.jar"
-                    }
-                  },
-                  {
-                    "id": "org.apache.maven:maven-artifact:3.6.0",
-                    "name": "Minecraft Forge (maven-artifact)",
-                    "type": "Library",
-                    "artifact": {
-                      "size": 55051,
-                      "MD5": "89e95013b11f347e48c0525965600404",
-                      "url": "https://etternal.red/gamefiles/repo/lib/org/apache/maven/maven-artifact/3.6.0/maven-artifact-3.6.0.jar"
-                    }
-                  },
-                  {
-                    "id": "net.jodah:typetools:0.8.1",
-                    "name": "Minecraft Forge (typetools)",
-                    "type": "Library",
-                    "artifact": {
-                      "size": 15367,
-                      "MD5": "0eb481e955b455e61bd5ea8f520f6009",
-                      "url": "https://etternal.red/gamefiles/repo/lib/net/jodah/typetools/0.8.1/typetools-0.8.1.jar"
-                    }
-                  },
-                  {
-                    "id": "org.apache.logging.log4j:log4j-api:2.11.2",
-                    "name": "Minecraft Forge (log4j-api)",
-                    "type": "Library",
-                    "artifact": {
-                      "size": 266283,
-                      "MD5": "3f7ee51e3dd0830de799dae0b90243dd",
-                      "url": "https://etternal.red/gamefiles/repo/lib/org/apache/logging/log4j/log4j-api/2.11.2/log4j-api-2.11.2.jar"
-                    }
-                  },
-                  {
-                    "id": "org.apache.logging.log4j:log4j-core:2.11.2",
-                    "name": "Minecraft Forge (log4j-core)",
-                    "type": "Library",
-                    "artifact": {
-                      "size": 1629585,
-                      "MD5": "c8bd8b5c5aaaa07a3dcbf57de01c9266",
-                      "url": "https://etternal.red/gamefiles/repo/lib/org/apache/logging/log4j/log4j-core/2.11.2/log4j-core-2.11.2.jar"
-                    }
-                  },
-                  {
-                    "id": "net.minecrell:terminalconsoleappender:1.2.0",
-                    "name": "Minecraft Forge (terminalconsoleappender)",
-                    "type": "Library",
-                    "artifact": {
-                      "size": 15977,
-                      "MD5": "679363fa893293791e55a21f81342f87",
-                      "url": "https://etternal.red/gamefiles/repo/lib/net/minecrell/terminalconsoleappender/1.2.0/terminalconsoleappender-1.2.0.jar"
-                    }
-                  },
-                  {
-                    "id": "net.sf.jopt-simple:jopt-simple:5.0.4",
-                    "name": "Minecraft Forge (jopt-simple)",
-                    "type": "Library",
-                    "artifact": {
-                      "size": 78146,
-                      "MD5": "eb0d9dffe9b0eddead68fe678be76c49",
-                      "url": "https://etternal.red/gamefiles/repo/lib/net/sf/jopt-simple/jopt-simple/5.0.4/jopt-simple-5.0.4.jar"
-                    }
-                  }
-                ]
-              },
-              {
-                "id": "generated.forgemod:optifine:1.15.2_HD_U_G1_pre24@jar",
-                "name": "OptiFine",
-                "type": "ForgeMod",
-                "required": {
-                  "value": false,
-                  "def": false
-                },
-                "artifact": {
-                  "size": 5524093,
-                  "MD5": "71481cee3c4e9a2852d90c2ae3ab354e",
-                  "url": "https://etternal.red/gamefiles/repo/forgemods/preview_OptiFine_1.15.2_HD_U_G1_pre24.jar"
-                }
-              },
               {
                 "id": "patcher-1.jar",
                 "name": "patcher-1.jar",
@@ -317,6 +36,18 @@
                   "MD5": "ac4d1219c865463a1c5aa076f3d19ac8",
                   "url": "https://launcher.bastion.red/patcher-1.jar",
                   "path": "patcher-1.jar"
+                }
+                
+              },
+              {
+                "id": "servers.dat",
+                "name": "Clientes del servidor",
+                "type": "File",
+                "artifact": {
+                    "size": 66,
+                    "MD5": "FDD8B1C6363575D5A33CB5D79D38D6F7",
+                    "path": "servers.dat",
+                    "url": "https://launcher.bastion.red/servers.dat" 
                 }
               }
             ]
